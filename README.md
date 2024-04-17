@@ -88,4 +88,8 @@ This is the place for you to write reflections:
 
 1. Pemisahan antara `Service` dan `Repository` sejatinya diperlukan untuk menghasilkan program yang bersih, terstruktur, dan memiliki maintainability yang baik. Dengan memisahkan keduanya, kita mendapatkan keuntungan berupa penerapan SRP, memberikan kohesi yang lebih tinggi, menunjang testability, menghasilkan program yang lebih fleksibel, dan membuat program menjadi reusable. Dengan demikian, pemisahan tersebut penting untuk menghasilkan program dengan kualitas yang lebih baik
 
+2. Jika kita tidak melalukan pemisahan antara keduanya, terdapat beberapa dampak buruk yang dapat terjadi. Di antaranya adalah penumpukan tanggung jawab, peningkatan kompleksitas kode, sulitnya pengujian, kurangnya modularitas, berkurangnya maintainability, dan berisiko tinggi ketika terjadi perubahan. Dari sisi interaksi, perubahan yang mungkin terjadi adalah model jadi harus menangani banyak hal. Hal ini akan berimbas pada kode model yang memiliki kompleksitas tinggi.
+
+3. Postman adalah salah satu tool yang sangat berguna dalam pengujian API. Beberapa fitur yang ada pada postman adalah collection, environment variable, automatic test, request runner, documentation, mock servers, dan monitoring
+   
 #### Reflection Publisher-3
