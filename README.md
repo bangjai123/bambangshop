@@ -78,6 +78,14 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-1
 
+1. Sebenarnya, penggunaan single modle struct memang bisa jadi cukup untuk digunakan. Akan tetapi, penggunaan interface atau trait dalam desain observer memberikan keunggulan dibanding penggunaan single model struct. Di antara keunggulan tersebut adalah dekopling, menunjang fleksibilitas, dan mendukung polimorfisme. Dengan demikian, pengguna interface masih dibutuhkan untuk menghasilkan kode dengan kualitas yang lebih baik. Dengan menerapkan interface atau trait, diharapkan kode akan lebih bersih, terorganisir, dan mudah diadaptasi pada kebutuhan mendatang.
+   
+2. Penggunaan vec mungkin memiliki keunggulan berupa implementasinya yang sederhana. Akan tetapi, Dashmap lebih unggul untuk kasus ini karena dashmap memberikan akses yang lebih cepat, menjamin keunikan secara otomatis, dan memberikan kemudahan dalam mengelola seperti menghapus dan menambah data. Dengan demikian, dalam kasus ini vec mungkin saja digunakan, tetapi Dashmap akan memberikan keuntungan yang signifikan. Oleh karena itu, menurut saya, tetap diperlukan Dashmap dalam implementasi kasus ini.
+
+3. Singleton pettern memiliki tujuan untuk memastikan bahwa sebuah kelas memiliki satu instansi saja dan menyediakan titik akses global ke instansi tersebut, sedangkan dashmap bekerja dengan keunggulan concurrent acces dan thread safety. Implementasi yang optimal adalah dengan menggunakan dashmap dalam konteks singleton. Dengan kata lain, menggabungkan keduanya alih-alih memilih salah satu. Dengan melakukan hal tersebut, Dashmap akan memberikan thread-safety yang efisien untuk operasi map, sedangkan singleton akan memastikan bahwa hanya ada instans Dashmap yang diakses secara global.
+
 #### Reflection Publisher-2
+
+1. Pemisahan antara `Service` dan `Repository` sejatinya diperlukan untuk menghasilkan program yang bersih, terstruktur, dan memiliki maintainability yang baik. Dengan memisahkan keduanya, kita mendapatkan keuntungan berupa penerapan SRP, memberikan kohesi yang lebih tinggi, menunjang testability, menghasilkan program yang lebih fleksibel, dan membuat program menjadi reusable. Dengan demikian, pemisahan tersebut penting untuk menghasilkan program dengan kualitas yang lebih baik
 
 #### Reflection Publisher-3
