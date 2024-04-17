@@ -93,3 +93,17 @@ This is the place for you to write reflections:
 3. Postman adalah salah satu tool yang sangat berguna dalam pengujian API. Beberapa fitur yang ada pada postman adalah collection, environment variable, automatic test, request runner, documentation, mock servers, dan monitoring
    
 #### Reflection Publisher-3
+
+1. Pada projek ini, model yang digunakan adalah push model. Hal ini dapat kita lihat dengan adanya method notify yang dipanggil setiap kali create, delete, maupun publish dipanggil. Hal ini berarti main project akan push notifikasi ke subscriber
+
+2. Pada projek ini, model yang digunakan adalah push model. Dengan demikian, dalam refleksi ini akan dibahas kekurangan dan kelebihan pull model.
+   - **Kekurangan**:
+         - **kurang efisien dalam hal waktu**. Hal ini disebabkan observer perlu aktif memeriksa apakah ada pembaruan data
+         - **Overhead pada Observer**. Pada model pull, observer melakukan permintaan secara periodik. Hal ini menyebabkan observer memiliki beban kerja yang lebih banyak
+         - **Penggunaan sumber daya yang lebih besar**. Hal ini terjadi jika banyak observer yang menarik data secara serentak dan terus-menerus
+     - **Kelebihan**
+           - **Mengurangi Traffic data**. Pada model pull, observer hanya menarik data saat dibutuhkan
+           - **Fleksibilitas data yang diakses**. Pada model pull, observer dapat memilih informasi spesifik yang diinginkan
+           - **Kontrol lebih besar pada observer**. Pada pull model, Observer memilih kontrol lebih besar dari pada push model
+
+3. Pada dasarnya, multi-threading digunakan agar notification tidak dikirim secara satu persatu kepada user. Dengan menghilangkan multi-threading, notifikasi akan dikirimkan secara satu-persatu. Hal ini akan menyababkan bottleneck pada sistem yang menyebabkan sistem akan bekerja sangat lambat.
